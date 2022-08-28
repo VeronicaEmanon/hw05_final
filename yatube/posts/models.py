@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from core.models import CreatedModel
-from django.db.models import Q, F, CheckConstraint
 
 User = get_user_model()
 
@@ -40,16 +39,16 @@ class Post(CreatedModel):
         verbose_name='Автор'
     )
     image = models.ImageField(
-        verbose_name = 'Картинка',
+        verbose_name='Картинка',
         upload_to='posts/',
         help_text='Вставьте изображение',
         blank=True
     )
 
     class Meta:
-        ordering=('-pub_date'),
-        verbose_name='Пост',
-        verbose_name_plural='Посты',
+        ordering = ('-pub_date'),
+        verbose_name = 'Пост',
+        verbose_name_plural = 'Посты',
 
     def __str__(self):
         return self.text
@@ -78,12 +77,13 @@ class Comment(CreatedModel):
     )
 
     class Meta:
-        ordering=('-pub_date'),
-        verbose_name='Комментарий',
-        verbose_name_plural='Комментарии',
+        ordering = ('-pub_date'),
+        verbose_name = 'Комментарий',
+        verbose_name_plural = 'Комментарии',
 
     def __str__(self):
         return self.text
+
 
 class Follow(models.Model):
     user = models.ForeignKey(
@@ -96,9 +96,9 @@ class Follow(models.Model):
         related_name='following',
         on_delete=models.CASCADE,
     )
-    
+
     class Meta:
-        verbose_name='Подписка',
-        verbose_name_plural='Подписки',
+        verbose_name = 'Подписка',
+        verbose_name_plural = 'Подписки',
         constraints = [models.UniqueConstraint(
             fields=['user', 'author'], name='unique_members')]
