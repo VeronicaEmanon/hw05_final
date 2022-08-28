@@ -25,7 +25,7 @@ class PostModelTest(TestCase):
         cls.comment = Comment.objects.create(
             author=cls.user,
             text='Тестовый комментарий',
-            post_id=cls.post.id 
+            post_id=cls.post.id
         )
 
     def test_models_have_correct_object_names(self):

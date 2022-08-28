@@ -1,7 +1,6 @@
 from django import forms
 
 from .models import Post, Comment
-from django.utils.translation import ugettext_lazy as _
 
 
 class PostForm(forms.ModelForm):

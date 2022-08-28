@@ -49,7 +49,7 @@ class StaticURLTests(TestCase):
         cls.comment = Comment.objects.create(
             author=cls.user,
             text='Тестовый комментарий',
-            post_id=cls.post.id 
+            post_id=cls.post.id
         )
 
     @classmethod
@@ -114,15 +114,14 @@ class StaticURLTests(TestCase):
     def test_follow_guest_client_error(self):
         response = self.guest_client.get('/follow/', follow=True)
         self.assertRedirects(
-            response, 
+            response,
             '/auth/login/?next=%2Ffollow%2F'
         )
 
-    
     def test_comment_post_for_guest_client_error(self):
         response = self.guest_client.get(
             f'/posts/{self.post.id}/comment/',
-            follow = True
+            follow=True
         )
         self.assertRedirects(
             response,
