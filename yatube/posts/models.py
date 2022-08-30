@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from core.models import CreatedModel
 
+
 User = get_user_model()
 
 
@@ -19,7 +20,7 @@ class Group(models.Model):
 
 class Post(CreatedModel):
     text = models.TextField(
-        verbose_name='Текст поста', 
+        verbose_name='Текст поста',
         help_text='Введите текст поста'
     )
     group = models.ForeignKey(
