@@ -139,9 +139,6 @@ class StaticURLTests(TestCase):
             '/create/': 'posts/post_create.html',
             '/nonexist-page/': 'core/404.html',
             '/follow/': 'posts/follow.html',
-            # '/page_not_found/': 'core/403.html',
-            # '/server_error/': 'core/500.html',
-            # '/csrf_failure/': 'core/403csrf.html',
         }
         for url, templates in template_url.items():
             with self.subTest(url=url):
