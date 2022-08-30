@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% block title %} 
+{% load cache %}
   Главная страница проекта Yatube
 {% endblock %}
+{% cache 20 index_page %}
 {% block content %}
   <h1> 
     Последние обновления на сайте 
@@ -42,3 +44,4 @@
   {% endfor %}
   {% include 'posts/includes/paginator.html' %}
 {% endblock %}
+{% endcache %}

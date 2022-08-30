@@ -3,11 +3,8 @@
 {% block title %}
   {{ group.title }}
 {% endblock %}
-{% block header %}
-<h1> {{ group.title }} </h1>
-{% endblock %}
 {% block content %} 
-<p> {{ group.description }} </p>
+<h1> {{ group.description }} </h2>
   {% for post in page_obj %}
     <article>
       <ul>

@@ -12,7 +12,6 @@ from .forms import PostForm, CommentForm
 from .constants import CONST1
 
 
-@cache_page(timeout=20, key_prefix='index_page')
 def index(request):
     posts = Post.objects.select_related('author', 'group').all()
     paginator = Paginator(posts, CONST1)
