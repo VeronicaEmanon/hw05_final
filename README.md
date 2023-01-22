@@ -1,3 +1,35 @@
-# hw05_final
+# Социальная сеть yatube!
 
-[![CI](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml)
+## Описание
+Данный проект позволит Вам:
+
+ - Создать свою страницу. В нем вы можете делиться своими записями с другими пользователями.
+ - Посещать страницы других пользователей, а также подписываться на них и комментировать записи.
+ - Выбирать имя и уникальный адрес для своей страницы.
+ 
+
+## Технологии в проекте
+
+ - Python 3.7.0
+ - Django==2.2.19
+
+## Инструкции по запуску в Dev-режиме
+
+ - Установите и активируйте виртуальное окружение:
+
+`python -m venv venv`
+
+`source venv/Scripts/activate`
+       
+ - Установите зависимости из файла **requirements.txt**:
+ 
+`python -m pip install --upgrade pip`
+
+`pip install -r requirements.txt`
+
+ - В папке с файлом manage.py выполните команду:
+
+`python3 manage.py runserver`
+
+## Автор
+### <a href="https://github.com/VeronicaEmanon">Никитина Вероника</a>
